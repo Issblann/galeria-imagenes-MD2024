@@ -1,7 +1,12 @@
-export const CarImage = () =>{
+import './index.css';
+
+export const CardImage = (props) =>{
+    const [titleImage, decriptionImage, urlImage ] = props;
     return(
-        <div className="CardImage">
-            <img></img>
-        </div>
+        <figure className="CardImage">
+            <img className="CardImage-Img" src={urlImage} alt="picture" />
+            <figcaption className="CardImage-Title">{titleImage}</figcaption>
+            <p>{decriptionImage}</p>
+        </figure>
     )
 }

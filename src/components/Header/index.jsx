@@ -1,21 +1,21 @@
-import React from "react";
 import './index.css';
 import { Link } from "react-router-dom";
 
 export const Header = () =>{
     return(
         <header className="Header">
-            <h1 className="Header-Title-">Galeria de Gatitos</h1>
+            <h1 className="Header-Title-">"Rick and Morty"</h1>
+            <p className='Header-Paragraph'>Wubba Lubba Dub Dub!</p>
             <nav className="Header-Nav">
-                <ul>
+                <ul className='Header-Nav-Ul'>
                     <li className="Header-Nav-li">
-                        <Link to="/">Home</Link>
+                        <Link className='Header-Nav-a' to="/">Home🏠</Link>
                     </li>
                     <li className="Header-Nav-li">
-                        <Link to="/Gatitos">Gatitos</Link>
+                        <Link className='Header-Nav-a' to="/Gatitos">Women🐍</Link>
                     </li>
                     <li className="Header-Nav-li">
-                        <Link to="/MasGatitos">Mas Gatitos</Link>
+                        <Link className='Header-Nav-a' to="/MasGatitos">Men🤥</Link>
                     </li>
                 </ul>
             </nav>

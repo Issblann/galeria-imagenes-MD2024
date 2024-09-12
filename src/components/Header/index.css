@@ -5,15 +5,18 @@
     align-items: center;
     flex-direction: column;
 }
-.Header-Nav {
+.Header-Nav-Ul {
     display: flex;
     justify-content: center;
 }
 .Header-Nav-li {
-    text-decoration: none;
+    list-style-type: none;
 }
 .Header-Nav-a {
     text-decoration: none;
     color: black;
     margin: 0 10px;
+}
+.Header-Nav-a:hover{
+    color:#33ff6b;
 }
