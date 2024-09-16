@@ -1,31 +1,29 @@
-import { useEffect, useState } from "react"
-import { Api } from "../services/Api"
 import { Layout } from "../components/Layout"
 import { CardImage } from "../components/CardImage"
+import { useFetch } from "../Hooks/useFetch"
 
 export const Home = ()=>{
-    const [data, setData] = useState([])
-
-    const results = async()=>{
-        const url = 'https://rickandmortyapi.com/api/character'
-        const data = await Api(url)
-        setData(data)
+    const {data, loading, error} = useFetch('https://rickandmortyapi.com/api/character');
+    if (loading) {
+        return (
+        <p>Loading...</p>
+        )
     }
-
-    useEffect(()=>{
-        results()
-    },[])
-
+    if(error){
+        return(
+            <p>Error: {error.message}</p>
+        )
+    }
 
     return(
         <Layout>
-            {data.map((character)=>{
+            {data.map((character) => {
                 return(
                     <CardImage
                     key = {character.id}
                     titleImage={character.name}
                     descriptionImage={character.species}
-                    ulrImage = {character.image}
+                    urlImage = {character.image}
                     />
                 )
             })}

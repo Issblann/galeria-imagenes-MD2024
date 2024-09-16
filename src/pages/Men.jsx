@@ -1,23 +1,14 @@
-import { useEffect, useState } from "react"
-import { Api } from "../services/Api"
 import { Layout } from "../components/Layout"
 import { CardImage } from "../components/CardImage"
+import { useFetch } from "../Hooks/useFetch"
 
 export const Men = ()=>{
-    const [data, setData] = useState([])
+    const {data, loading, error} = useFetch('https://rickandmortyapi.com/api/character')
 
-    const results = async()=>{
-        const url = 'https://rickandmortyapi.com/api/character'
-        const data = await Api(url)
-        setData(data)
-    }
+    if(loading) return<p>Loading...</p>;
+    if(error) return<p>Error: {error.message}</p>;
 
-    useEffect(()=>{
-        results()
-    },[])
-
-    const menFilter = data.filter((character)=>
-    (character.gender === 'Men'))
+    const menFilter = data.filter((character) => character.gender ==='Male')
 
     return(
         <Layout>
@@ -27,7 +18,7 @@ export const Men = ()=>{
                     key = {character.id}
                     titleImage={character.name}
                     descriptionImage={character.species}
-                    ulrImage = {character.image}
+                    urlImage = {character.image}
                     />
                 )
             })}

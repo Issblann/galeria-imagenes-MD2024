@@ -12,10 +12,10 @@ export const Header = () =>{
                         <Link className='Header-Nav-a' to="/">Home🏠</Link>
                     </li>
                     <li className="Header-Nav-li">
-                        <Link className='Header-Nav-a' to="/Gatitos">Women🐍</Link>
+                        <Link className='Header-Nav-a' to="/Women">Women🐍</Link>
                     </li>
                     <li className="Header-Nav-li">
-                        <Link className='Header-Nav-a' to="/MasGatitos">Men🤥</Link>
+                        <Link className='Header-Nav-a' to="/Men">Men🤥</Link>
                     </li>
                 </ul>
             </nav>
